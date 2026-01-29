@@ -68,6 +68,10 @@
     margin: 0;
     letter-spacing: 1px;
     font-family: 'Georgia', serif;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.1;
+    hyphens: auto;
 }
 /* Precios múltiples en platillos */
 .multi-precio {
@@ -175,12 +179,20 @@
     }
 }
 
-@media (max-width: 480px) {
-    .platillo > div[style*="flex-direction:row"] img.zoom-gallo {
-        width: 36px !important;
-        height: 36px !important;
-        margin-right: 4px;
+@media (max-width: 600px) {
+    .logo-header {
+        width: 80px;
+        height: 80px;
     }
+    .header h1 {
+        font-size: 1.15em;
+        padding: 0 4px;
+        line-height: 1.15;
+        letter-spacing: 0.5px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
     .platillo > div[style*="flex-direction:row"] {
         gap: 4px !important;
     }
@@ -320,6 +332,9 @@ align-items: center;
 justify-content: center;
 padding: 20px;
 text-align: center;
+word-break: break-word;
+width: 100%;
+box-sizing: border-box;
 }
 
 .info-hoja img {
@@ -334,13 +349,15 @@ box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     color: #223A5E;
     font-size: 1.8em;
     margin-bottom: 15px;
+    word-break: break-word;
 }
 
 .info-hoja p {
     color: #223A5E;
-    font-size: 0.95em;
+    font-size: 1em;
     line-height: 1.6;
     margin-bottom: 15px;
+    word-break: break-word;
 }
 
 .contact-info {
@@ -353,6 +370,7 @@ box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     overflow-wrap: break-word;
     word-wrap: break-word;
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 .contact-info h3 {
@@ -526,6 +544,12 @@ padding: 12px 8px;
 }
 
 @media (max-width: 480px) {
+    .header h1 {
+        font-size: 1em;
+        padding: 0 2px;
+        line-height: 1.12;
+        letter-spacing: 0.2px;
+    }
 body {
 padding: 3px;
 }
@@ -605,4 +629,39 @@ margin-bottom: 6px;
 .contact-info a {
 font-size: 0.8em;
 }
+
+@media (max-width: 600px) {
+    .info-hoja {
+        padding: 10px 2vw;
+    }
+    .info-hoja h2 {
+        font-size: 1.15em;
+        margin-bottom: 10px;
+    }
+    .info-hoja p {
+        font-size: 0.95em;
+        margin-bottom: 10px;
+    }
+    .contact-info {
+        padding: 10px 4px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-hoja {
+        padding: 6px 1vw;
+    }
+    .info-hoja h2 {
+        font-size: 1em;
+        margin-bottom: 7px;
+    }
+    .info-hoja p {
+        font-size: 0.9em;
+        margin-bottom: 7px;
+    }
+    .contact-info {
+        padding: 7px 2px;
+        font-size: 0.9em;
+    }
 }

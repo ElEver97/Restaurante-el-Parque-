@@ -12,28 +12,27 @@
     </head>
     <body>
         <div class="container">
-            <!-- ENCABEZADO 
-            <div class="header">
-            </div>-->
-
+            <!-- ENCABEZADO PRINCIPAL -->
+            <header class="header">
+                <img src="img/logo.jpeg" alt="Logo Restaurante El Parque" class="logo-header">
+                <h1>Restaurante El Parque</h1>
+            </header>
+            <hr id="divider-header-info" class="divider-header-info" style="display:none;">
             <!-- BOTONES DE NAVEGACIÓN (HOJAS) -->
-            <div class="tabs-container">
-                <button class="tab-btn active" onclick="mostrarHoja(1)">Info</button>
+            <div class="tabs-container" id="tabsContainer">
                 <button class="tab-btn" onclick="mostrarHoja(2)">Desayuno</button>
                 <button class="tab-btn" onclick="mostrarHoja(3)">Arroces</button>
                 <button class="tab-btn" onclick="mostrarHoja(4)">Rápida</button>
                 <button class="tab-btn" onclick="mostrarHoja(5)">Gustitos</button>
                 <button class="tab-btn" onclick="mostrarHoja(6)">Especiales</button>
-                <button class="tab-btn" onclick="mostrarHoja(7)">Postres</button>
+                <button class="tab-btn" onclick="mostrarHoja(7)">Bebidas</button>
+                <button class="tab-btn" onclick="mostrarHoja(8)">Postres</button>
             </div>
-
             <!-- ÁREA DE CONTENIDO CON SCROLL -->
             <div class="content-area" id="contentArea">
                 <div class="hojas-wrapper" id="hojasWrapper">
                     <!-- HOJA 1: INFORMACIÓN -->
                     <div class="hoja info-hoja" data-hoja="1">
-                        <img src="img/logo.jpeg" alt="Logo Restaurante El Parque">
-                        <h2>Restaurante El Parque</h2>
                         <p>¡Bienvenido a nuestro restaurante!</p>
                         <p>Somos un lugar dedicado a servir deliciosas comidas caseras con ingredientes frescos y de calidad. Nuestro menú ofrece una variedad de opciones para todos los gustos.</p>
 
@@ -44,6 +43,7 @@
                             <p><i class="fa-brands fa-facebook icon-facebook"></i><strong>Facebook:</strong> <a href="https://www.facebook.com/Rest.ElParque/?locale=es_LA" target="_blank">Restaurant El Parque</a></p>
                             <p><i class="fa-brands fa-instagram icon-instagram"></i><strong>Instagram:</strong> <a href="https://www.instagram.com/rest_el_parque/?hl=es-la" target="_blank">Restaurant El Parque</a></p>
                         </div>
+                        <button class="ver-menu-btn" onclick="mostrarHoja(2)"><i class='fa-solid fa-utensils'></i> Ver menú</button>
                     </div>
 
                     <!-- HOJA 2: DESAYUNOS -->
@@ -504,13 +504,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="margin-top: 18px; padding: 10px; background: #ede0d5; border-left: 4px solid #c17a2a; border-radius: 4px; font-size: 0.95em; color: #c0392b; text-align: center;">
-                            <strong>En platos para llevar se cobra el empaque ₡200</strong>
-                        </div>
-                    </div>
 
-                    <!-- HOJA 7: ACOMPAÑAMIENTOS, POSTRES Y BEBIDAS -->
-                    <div class="hoja" data-hoja="7">
+                        <!-- Acompañamientos -->
                         <div class="categoria">
                             <h2>🥘 ACOMPAÑAMIENTOS</h2>
                             <div class="platillos">
@@ -549,22 +544,13 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="categoria">
-                            <h2>🍰 POSTRES</h2>
-                            <div class="platillos">
-                                <div class="platillo">
-                                    <strong>ENSALADA DE FRUTAS</strong> ₡ 2.800
-                                </div>
-                                <div class="platillo">
-                                    <strong>COPA DE HELADO</strong> ₡ 1.600
-                                </div>
-                                <div class="platillo">
-                                    <strong>GELATINA CON HELADO</strong> ₡ 2.000
-                                </div>
-                            </div>
+                        <div style="margin-top: 18px; padding: 10px; background: #ede0d5; border-left: 4px solid #c17a2a; border-radius: 4px; font-size: 0.95em; color: #c0392b; text-align: center;">
+                            <strong>En platos para llevar se cobra el empaque ₡200</strong>
                         </div>
+                    </div>
 
+                    <!-- HOJA 7: BEBIDAS -->
+                    <div class="hoja" data-hoja="7">
                         <div class="categoria">
                             <h2>🥤 BEBIDAS FRÍAS</h2>
                             <div class="platillos">
@@ -610,7 +596,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="categoria">
                             <h2>☕ BEBIDAS CALIENTES</h2>
                             <div class="platillos">
@@ -635,8 +620,28 @@
                             <strong>En platos para llevar se cobra el empaque ₡200</strong>
                         </div>
                     </div>
+
+                    <!-- HOJA 8: POSTRES -->
+                    <div class="hoja" data-hoja="8">
+                        <div class="categoria">
+                            <h2>🍰 POSTRES</h2>
+                            <div class="platillos">
+                                <div class="platillo">
+                                    <strong>ENSALADA DE FRUTAS</strong> ₡ 2.800
+                                </div>
+                                <div class="platillo">
+                                    <strong>COPA DE HELADO</strong> ₡ 1.600
+                                </div>
+                                <div class="platillo">
+                                    <strong>GELATINA CON HELADO</strong> ₡ 2.000
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aviso-empaque">
+                            <strong>En platos para llevar se cobra el empaque ₡200</strong>
+                        </div>
+                    </div>
                 </div>
-                <!-- Fin hoja desayunos -->
             </div>
         </div>
 

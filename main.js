@@ -1,3 +1,11 @@
+// Hace el header clickeable para mostrar la hoja de información
+document.addEventListener('DOMContentLoaded', function() {
+    var header = document.querySelector('.header');
+    if(header) {
+        header.style.cursor = 'pointer';
+        header.onclick = function() { mostrarHoja(1); };
+    }
+});
 function showZoomModal(img) {
     // Crear overlay
     const overlay = document.createElement('div');
@@ -18,31 +26,77 @@ const tabButtons = document.querySelectorAll('.tab-btn');
 const hojas = document.querySelectorAll('.hoja');
 let hojaActual = 1;
 
+const tabsContainer = document.getElementById('tabsContainer');
+
 function mostrarHoja(numero) {
     const offset = (numero - 1) * hojasWrapper.offsetWidth;
     hojasWrapper.scrollTo({ left: offset, behavior: 'smooth' });
     hojaActual = numero;
     actualizarBotonesActivos(numero);
+    // Ocultar los botones si estamos en la hoja de Info
+    if (numero === 1) {
+        tabsContainer.style.display = 'none';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = '';
+    } else {
+        tabsContainer.style.display = '';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = 'none';
+    }
 }
 window.mostrarHoja = mostrarHoja; // Hacer global
 
 function actualizarBotonesActivos(hojaActiva) {
+    // Como ya no existe el botón Info, el primer botón corresponde a hoja 2
     tabButtons.forEach((btn, index) => {
-        if (index === hojaActiva - 1) {
+        if (index === hojaActiva - 2) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
         }
     });
+    // Ocultar los botones si estamos en la hoja de Info
+    if (hojaActiva === 1) {
+        tabsContainer.style.display = 'none';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = '';
+    } else {
+        tabsContainer.style.display = '';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = 'none';
+    }
 }
 
 hojasWrapper.addEventListener('scroll', () => {
     const index = Math.round(hojasWrapper.scrollLeft / hojasWrapper.offsetWidth);
     hojaActual = index + 1;
     actualizarBotonesActivos(hojaActual);
+    // Ocultar los botones si estamos en la hoja de Info
+    if (hojaActual === 1) {
+        tabsContainer.style.display = 'none';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = '';
+    } else {
+        tabsContainer.style.display = '';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = 'none';
+    }
 });
 
 let startX = 0;
+
+// Al cargar la página, ocultar los botones si estamos en la hoja de Info
+window.addEventListener('DOMContentLoaded', () => {
+    if (hojaActual === 1) {
+        tabsContainer.style.display = 'none';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = '';
+    } else {
+        tabsContainer.style.display = '';
+        const divider = document.getElementById('divider-header-info');
+        if (divider) divider.style.display = 'none';
+    }
+});
 hojasWrapper.addEventListener('touchstart', (e) => {
     if (e.touches.length === 1) {
         startX = e.touches[0].clientX;

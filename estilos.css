@@ -40,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+    background: linear-gradient(90deg, #f7e9d0 0%, #f3d6b6 50%, #e7b97a 100%);
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     margin: 24px auto 18px auto;
@@ -72,6 +72,9 @@
     word-break: break-word;
     line-height: 1.1;
     hyphens: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* Precios múltiples en platillos */
 .multi-precio {
@@ -185,14 +188,14 @@
         height: 80px;
     }
     .header h1 {
-        font-size: 1.15em;
-        padding: 0 4px;
-        line-height: 1.15;
-        letter-spacing: 0.5px;
-        white-space: normal;
-        word-break: break-word;
+        font-size: 0.98em;
+        padding: 0 2px;
+        line-height: 1.1;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-}
     .platillo > div[style*="flex-direction:row"] {
         gap: 4px !important;
     }
@@ -545,10 +548,13 @@ padding: 12px 8px;
 
 @media (max-width: 480px) {
     .header h1 {
-        font-size: 1em;
-        padding: 0 2px;
-        line-height: 1.12;
-        letter-spacing: 0.2px;
+        font-size: 0.85em;
+        padding: 0 1px;
+        line-height: 1.08;
+        letter-spacing: 0.1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 body {
 padding: 3px;
